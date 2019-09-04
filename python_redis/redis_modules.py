@@ -12,7 +12,7 @@ def cria_matriz(linhas, colunas):
   return A
 
 
-def multiplica_linha_coluna( matrizA, matrizB, i, j):
+def multiplica_linha_coluna(matrizA, matrizB, i, j):
       valor = 0
     
       for k in range(len(matrizB)):

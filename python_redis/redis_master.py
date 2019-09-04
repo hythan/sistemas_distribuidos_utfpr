@@ -13,7 +13,7 @@ if __name__ == "__main__":
   redis_conn = Redis(host='127.0.0.1',port=6379)
   queue_jobs = Queue('my_queue', connection=redis_conn)
 
-  linhas, colunas = 3, 3
+  linhas, colunas = 10, 10
 
   print("{}: Gerando matrizes".format(time.strftime('%c')))
   matrizA = cria_matriz(linhas, colunas)
@@ -36,8 +36,8 @@ if __name__ == "__main__":
         sleep(2)
         print "Resultado {0}".format(job.result)
       print job.result
-      linha, coluna, valor = job.result
-      matrizC[linha][coluna] = valor
+      linha, coluna, resultado = job.result
+      matrizC[linha][coluna] = resultado
         
 
     
